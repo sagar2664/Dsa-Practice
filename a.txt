@@ -1,0 +1,5 @@
+Computer Science : Programming and Data Structures | Machine Learning | Web Development
+
+Mathematics : Probability and Statistics | Operations Research | Advanced Calculus | Linear Algebra |Transform Calculus
+
+Mechanical Courses : Mechanics of solids | Dynamics | Kinematics and Kinetics of Machines | Design of Machine Element | Computer Controlled Manufacturing | Computer Integrated Manufacturing | Machine and Machine Tools | Introduction to Reliability | Introduction to quality
