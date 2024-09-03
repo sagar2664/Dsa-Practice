@@ -6,38 +6,21 @@ const int mod = 1e9 + 7;
 
 int n;
 string s;
-vector<vector<int>> dp;
-set<int> st;
-
-int rec(int i, int p)
-{
-    if (i == n)
-        return 0;
-
-    if (dp[i][p] != -1)
-        return dp[i][p];
-
-    int ans = 0;
-    int num = s[i] - '0';
-    if (p != 0)
-        num = 10 * (s[i - 1] - '0') + (s[i] - '0');
-    if (st.find(num) != st.end())
-        ans = 1 + rec(i + 1, 0) + rec(i + 1, 1);
-    else
-        ans = rec(i + 1, 0) + rec(i + 1, 1);
-    
-    return dp[i][p]=ans;
-}
 void solve()
 {
     cin >> s;
     n = s.length();
-    for(int i=0;i<100;i++)
+    int p=5;
+    int ans=0;
+    for(int i=n-1;i>=0;i--)
     {
-        if(i%4==0) st.insert(i);
+        int cur=s[i]-'0';
+        if(cur%4==0) ans++;
+        int t=cur*10+p;
+        if(t%4==0) ans+=i+1;
+        p=cur;
     }
-    dp.resize(n+1,vector<int>(2,-1));
-    cout<<rec(0,0)<<endl;
+    cout<<ans<<endl;
 }
 
 signed main()
